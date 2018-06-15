@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.renderscript.ScriptGroup;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -29,7 +30,7 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://10.0.2.2/login.php";
+        String login_url = "http://cdae88bc.ngrok.io/login.php";
         if (type.equals("login")) {
             try {
                 URL url = new URL(login_url);
@@ -40,7 +41,9 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoOutput(true);
                     httpURLConnection.setDoInput(true);
+                    //httpURLConnection.connect();
                     OutputStream outputStream = httpURLConnection.getOutputStream();
+                    Log.d("lol1", "lol1");
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                     String post_data = URLEncoder.encode("user_name", "UTF-8") + "=" +URLEncoder.encode(user_name, "UTF-8")+"&"
                             + URLEncoder.encode("password", "UTF-8") + "=" +URLEncoder.encode(password, "UTF-8");
