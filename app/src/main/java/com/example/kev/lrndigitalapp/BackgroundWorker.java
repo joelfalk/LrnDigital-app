@@ -3,7 +3,6 @@ package com.example.kev.lrndigitalapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -22,8 +21,10 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
 
     private Context context;
     private AlertDialog alertDialog;
+    private String result = "";
 
-    BackgroundWorker (Context ctx) {
+
+    BackgroundWorker(Context ctx) {
         context = ctx;
     }
 
@@ -35,9 +36,9 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
             try {
                 URL url = new URL(login_url);
                 try {
-                    String user_name = params [1];
-                    String password = params [2];
-                    HttpURLConnection httpURLConnection =  (HttpURLConnection)url.openConnection();
+                    String user_name = params[1];
+                    String password = params[2];
+                    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                     httpURLConnection.setRequestMethod("POST");
                     httpURLConnection.setDoOutput(true);
                     httpURLConnection.setDoInput(true);
@@ -45,19 +46,20 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
                     OutputStream outputStream = httpURLConnection.getOutputStream();
                     Log.d("lol1", "lol1");
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                    String post_data = URLEncoder.encode("user_name", "UTF-8") + "=" +URLEncoder.encode(user_name, "UTF-8")+"&"
-                            + URLEncoder.encode("password", "UTF-8") + "=" +URLEncoder.encode(password, "UTF-8");
+                    String post_data = URLEncoder.encode("user_name", "UTF-8") + "=" + URLEncoder.encode(user_name, "UTF-8") + "&"
+                            + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8");
                     bufferedWriter.write(post_data);
                     bufferedWriter.flush();
                     bufferedWriter.close();
                     outputStream.close();
                     InputStream inputStream = httpURLConnection.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
-                    String result = "";
-                    String line ="";
+                    String line = "";
                     while ((line = bufferedReader.readLine()) != null) {
                         result = result + line;
+                        Log.d("result", result);
                     }
+
                     bufferedReader.close();
                     inputStream.close();
                     httpURLConnection.disconnect();
@@ -80,6 +82,7 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
 
     @Override
     protected void onPostExecute(String result) {
+
         alertDialog.setMessage(result);
         alertDialog.show();
     }
@@ -89,4 +92,7 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
         super.onProgressUpdate(values);
     }
 
+
 }
+
+

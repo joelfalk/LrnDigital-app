@@ -4,4 +4,6 @@
     <string name="username">Username</string>
     <string name="pw">Password</string>
     <string name="confirm">Confirm</string>
+    <string name="password">password</string>
+    <string name="LrnDig">LrnDig</string>
 </resources>
