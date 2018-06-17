@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void switchWindow (View view) {
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, register.class);
         startActivity(intent);
     }
 }
