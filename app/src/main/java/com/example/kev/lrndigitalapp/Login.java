@@ -13,8 +13,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        UsernameEt = findViewById(R.id.username);
-        PasswordEt = findViewById(R.id.password);
+
+
     }
 
     public void confirm(View view) {
