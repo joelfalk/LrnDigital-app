@@ -32,6 +32,7 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
     protected String doInBackground(String... params) {
         String type = params[0];
         String login_url = "http://cdae88bc.ngrok.io/login.php";
+        String register_url ="http://cdae88bc.ngrok.io/register.php";
         if (type.equals("login")) {
             try {
                 URL url = new URL(login_url);
@@ -70,6 +71,8 @@ public class BackgroundWorker extends AsyncTask<String, Void ,String> {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
+        } else if (type.equals("register")) {
+
         }
         return null;
     }
