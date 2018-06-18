@@ -17,12 +17,8 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public void confirm(View view) {
-        String username = UsernameEt.getText().toString();
-        String password = PasswordEt.getText().toString();
-        String type = "login";
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, username, password);
-        //Intent intent = new Intent(this, MainActivity.class);
+    public void openProv(View view) {
+        //När någon klickar på provknappen kommer fönstret att ändras
+        //Intent intent = new Intent(this, Prov.class);
     }
 }
