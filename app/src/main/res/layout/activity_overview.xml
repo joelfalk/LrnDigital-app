@@ -16,12 +16,12 @@
         app:srcCompat="@drawable/radarchart" />
 
     <ImageView
-        android:id="@+id/svenska"
-        android:layout_width="393dp"
-        android:layout_height="253dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/profile"
+        android:layout_width="282dp"
+        android:layout_height="186dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/profile" />
 
     <ImageView
         android:id="@+id/absence"
@@ -29,29 +29,14 @@
         android:layout_height="75dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/radar"
-        app:layout_constraintTop_toBottomOf="@+id/svenska"
         app:srcCompat="@drawable/presencedonut" />
-
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="282dp"
-        android:layout_height="186dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/radar"
-        app:layout_constraintEnd_toStartOf="@+id/svenska"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
 
     <Button
         android:id="@+id/englishBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="42dp"
@@ -59,9 +44,9 @@
         android:layout_marginRight="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="108dp"
+        android:background="@android:color/transparent"
         android:onClick="engelska"
-        android:text="Button"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/radar"
         app:layout_constraintEnd_toEndOf="@+id/radar"
         app:layout_constraintHorizontal_bias="1.0"
@@ -78,9 +63,9 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
         android:onClick="svenska"
-        android:text="Button"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/radar"
         app:layout_constraintEnd_toEndOf="@+id/radar"
         app:layout_constraintHorizontal_bias="0.425"
@@ -89,11 +74,26 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/engelska"
-        android:layout_width="381dp"
-        android:layout_height="249dp"
+        android:id="@+id/svenska"
+        android:layout_width="355dp"
+        android:layout_height="265dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/svenskagraf" />
+
+    <ImageView
+        android:id="@+id/engelska"
+        android:layout_width="355dp"
+        android:layout_height="261dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/graf" />
 
 </android.support.constraint.ConstraintLayout>
