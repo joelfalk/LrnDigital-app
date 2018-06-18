@@ -22,7 +22,8 @@
         <activity android:name=".Prov" />
         <activity android:name=".Login" />
         <activity android:name=".ReadData" />
-        <activity android:name=".register"></activity>
+        <activity android:name=".register" />
+        <activity android:name=".Overview"></activity>
     </application>
 
 </manifest>

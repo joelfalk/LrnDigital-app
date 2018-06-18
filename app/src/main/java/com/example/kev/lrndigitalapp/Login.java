@@ -8,7 +8,6 @@ import android.widget.EditText;
 
 public class Login extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,4 +16,8 @@ public class Login extends AppCompatActivity {
 
     }
 
+    public void overview(View view) {
+        Intent intent = new Intent(this, Overview.class);
+        startActivity(intent);
+    }
 }
