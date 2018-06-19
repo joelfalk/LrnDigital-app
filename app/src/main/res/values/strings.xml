@@ -7,4 +7,5 @@
     <string name="password">password</string>
     <string name="LrnDig">LrnDig</string>
     <string name="narvaro">Närvaro</string>
+    <color name="white">#FFFFFF</color>
 </resources>

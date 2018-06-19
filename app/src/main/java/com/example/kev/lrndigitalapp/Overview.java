@@ -1,6 +1,7 @@
 package com.example.kev.lrndigitalapp;
 
 import android.content.pm.ActivityInfo;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,8 @@ public class Overview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ActionBar actbar = getSupportActionBar();
+        actbar.hide();
         //Button sv = findViewById(R.id.swedishBtn);
         //Button eng = findViewById(R.id.englishBtn);
         setContentView(R.layout.activity_overview);
